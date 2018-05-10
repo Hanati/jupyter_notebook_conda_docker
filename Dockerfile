@@ -22,6 +22,10 @@ RUN chmod +x /usr/bin/tini
 ENV PATH /opt/conda/bin:$PATH
 
 RUN conda install jupyter -y --quiet
+
+## passwd conda-book
+RUN jupyter notebook --generate-config
+RUN echo "c.NotebookApp.password='sha1:***'">>/root/.jupyter/jupyter_notebook_config.py
  
 WORKDIR /home
 ## ENTRYPOINT [ "/usr/bin/tini", "--" ]
