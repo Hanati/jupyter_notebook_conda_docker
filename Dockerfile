@@ -25,7 +25,7 @@ RUN conda install jupyter -y --quiet
 
 ## passwd conda-book
 RUN jupyter notebook --generate-config
-RUN echo "c.NotebookApp.password='sha1:***'">>/root/.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.password='sha1:d719cc70ed4d:687be3572113229cac1ace96976c8f4cb94ef22e'">>/root/.jupyter/jupyter_notebook_config.py
  
 WORKDIR /home
 ## ENTRYPOINT [ "/usr/bin/tini", "--" ]
